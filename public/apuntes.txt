@@ -434,4 +434,8 @@
 	
 [*] 
 	
-[*] 
+[*] Imagenes carousel...
+INSERT INTO `ProyectoWeb`.`carousels` (`url`, `name`, `description`, `created_at`, `updated_at`) VALUES ('http://staticns.ankama.com/ankama/cms/images/274/2015/09/25/443374.jpg?fbclid=IwAR0XxMmOP10Xc15Ifsy4SgoBR2MvGDlNht1vYwxEvU-oYQHg-yX9swXQvC4', 'Dofus Plannet', 'Bienvenidos a Dofus', '2018-03-12', '2018-03-12');
+INSERT INTO `ProyectoWeb`.`carousels` (`url`, `name`, `description`, `created_at`, `updated_at`) VALUES ('http://maliki.com/wp-content/uploads/2016/02/Dofus.jpg?fbclid=IwAR1jj3CN8iFvKrc8-59blnMbDB4VJR5cL7DA4Dl3t6mfEDXQ1H-7zVGGrWc', 'Dofus Touch', 'Alguna aventura se aproxima', '2019-04-11', '2019-04-11');
+INSERT INTO `ProyectoWeb`.`carousels` (`url`, `name`, `description`, `created_at`, `updated_at`) VALUES ('https://s.ankama.com/www/static.ankama.com/ankama/cms/images/276/2017/09/20/758961.jpg', 'izzaelle', 'El proximo combate se aproxima', '2019-05-23', '2019-05-23');
+
