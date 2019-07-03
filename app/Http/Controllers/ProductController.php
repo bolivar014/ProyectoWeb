@@ -9,7 +9,7 @@ class ProductController extends Controller
     //
     public function index()
     {
-        $products = Product::paginate(20);
+        $products = Product::paginate(15);
         return view('product.index')->with(compact('products'));
     }
 
@@ -19,20 +19,60 @@ class ProductController extends Controller
         return view('product.create');
     }
 
+    //
     public function store(Request $request)
     {
-        $product = new Product();
-        $product->code_product = $request->input('code_product');
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->quantity = $request->input('quantity');
-        $product->price = $request->input('price');
-        $product->save(); // Guardamos Registro
+        $products = new Product();
+        $products->code_product = $request->input('code_product');
+        $products->name = $request->input('name');
+        $products->description = $request->input('description');
+        $products->quantity = $request->input('quantity');
+        $products->price = $request->input('price');
+        $products->save(); // Guardamos Registro
         
-        $products = Product::paginate(20); // Cargamos nuevo Registro
+        $products = null;
+        $products = Product::paginate(15); // Cargamos nuevo Registro
 
         $notification = 'Producto almacenado Exitosamente';
         
         return view('product.index')->with(compact(['notification','products']));
+    }
+
+    //
+    public function edit($id)
+    {
+        $products = Product::find($id);
+        return view('product.edit')->with(compact('products'));
+    }
+
+    //
+    public function update(Request $request, $id)
+    {
+        $products = Product::find($id);
+        $products->code_product = $request->input('code_product');
+        $products->name = $request->input('name');
+        $products->description = $request->input('description');
+        $products->quantity = $request->input('quantity');
+        $products->price = $request->input('price');
+        $products->save();
+
+        
+        $products = Product::paginate(15); // Cargamos nuevo Registro
+
+        $notification = 'Producto almacenado Exitosamente';
+        return view('product.index')->with(compact(['notification','products']));
+    }
+
+    public function destroy($id)
+    {
+        $products = Product::find($id);
+        $products->delete();
+    
+        $products = Product::paginate(15); // Cargamos nuevo Registro
+
+        $notification = 'Producto Eliminado Exitosamente';
+        return view('product.index')->with(compact(['notification','products']));
+    
+
     }
 }
