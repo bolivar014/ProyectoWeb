@@ -21,4 +21,8 @@ Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/about', 'HomeController@about');
 
 
-Route::get('/buy/index', 'ProductController@index');
+// RUTAS ProductController
+Route::get('/product', 'ProductController@index');
+Route::get('/product/index', 'ProductController@index');
+Route::get('/product/create', 'ProductController@create');
+Route::post('/product', 'ProductController@store');

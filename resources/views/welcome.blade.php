@@ -1,6 +1,13 @@
 @extends('layouts.app')
     @section('content')
         <div class="container-fluid">
+            <div class="row">
+                @if (session('notification'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('notification') }}
+                    </div>
+                @endif
+            </div>
             <div class="row">           
                 <div class="col-12 ml-auto mr-auto">    
                     <div class="jumbotron h2">

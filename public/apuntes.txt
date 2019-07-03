@@ -1,4 +1,7 @@
-[*] Verificar Estado de git..
+[*] Liberar Vinculo git
+	git remote rm origin
+	
+	Verificar Estado de git..
     git status
 
     Inicializar repositorio git
