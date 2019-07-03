@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+// Eventos Request En caso de algun Error
+use App\Http\Requests\CreateProductRequest;
+
 class ProductController extends Controller
 {
     //
@@ -20,7 +23,7 @@ class ProductController extends Controller
     }
 
     //
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
         $products = new Product();
         $products->code_product = $request->input('code_product');
