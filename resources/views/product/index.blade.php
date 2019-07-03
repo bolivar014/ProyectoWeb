@@ -10,8 +10,6 @@
                         </div>
                     @endif
               
-
-              
                     <h1 class="display-4 text-center">Tabla de Productos...</h1>
                     <p class="lead">A continuación Encontraras una tabla con información Referente a productos.</p>    
                     <hr>
