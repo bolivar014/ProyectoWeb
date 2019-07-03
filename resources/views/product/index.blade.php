@@ -11,11 +11,12 @@
                     @endif
                     <h1 class="display-4 text-center">Tabla de Productos...</h1>
                     <p class="lead">A continuación Encontraras una tabla con información Referente a productos.</p>    
+                    <hr>
                     <a href="{{ url('/product/create') }}" class="btn btn-primary" autocomplete="off" style="margin-bottom: 10px;">
                         Agregar Producto
                     </a>
                     <div class="row">
-                        <table class="table table-hover">
+                        <table class="table table-hover" >
                             <thead>
                                 <tr>
                                     <th scope="col">Código</th>
@@ -39,7 +40,7 @@
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                                 
-                                                <a href="#" type="button" rel="tooltip" title="Ver Información" class="btn btn-success btn-xs">
+                                                <a href="{{ url('/product/'.$product->id.'/view') }}" type="button" rel="tooltip" title="Ver Información" class="btn btn-success btn-xs">
                                                     <i class="material-icons">search</i>
                                                 </a>
                                                 <a href="{{ url('/product/'.$product->id.'/edit') }}" href="#" type="button" rel="tooltip" title="Editar" class="btn btn-info btn-xs">

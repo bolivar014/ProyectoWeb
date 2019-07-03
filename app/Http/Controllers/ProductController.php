@@ -63,6 +63,7 @@ class ProductController extends Controller
         return view('product.index')->with(compact(['notification','products']));
     }
 
+    //
     public function destroy($id)
     {
         $products = Product::find($id);
@@ -74,5 +75,13 @@ class ProductController extends Controller
         return view('product.index')->with(compact(['notification','products']));
     
 
+    }
+
+    //
+    public function view($id)
+    {
+        $products = Product::find($id);
+        return view('product.view')->with(compact('products'));
+    
     }
 }
